@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "get-biji": {
+      "command": "node",
+      "args": ["/Users/qinxiaoqiang/Downloads/get_biji_qcoder/build/index.js"],
+      "env": {
+        "GET_BIJI_API_KEY": "your_api_key_here",
+        "GET_BIJI_DEFAULT_TOPIC_ID": "your_default_topic_id_here"
+      }
+    }
+  }
+}

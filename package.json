@@ -1,0 +1,55 @@
+{
+  "name": "mcp-get-biji-server",
+  "version": "1.0.0",
+  "description": "MCP server for Get笔记 API integration - AI-powered knowledge base search and retrieval",
+  "type": "module",
+  "main": "build/index.js",
+  "bin": {
+    "mcp-get-biji-server": "./build/index.js"
+  },
+  "files": [
+    "build",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc && chmod +x build/index.js",
+    "watch": "tsc --watch",
+    "start": "node build/index.js",
+    "dev": "tsc && node build/index.js",
+    "test": "tsc && node build/test.js",
+    "test:basic": "tsc && node build/test.js",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "get-biji",
+    "notes",
+    "knowledge-base",
+    "ai",
+    "search",
+    "claude"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/mcp-get-biji-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/mcp-get-biji-server/issues"
+  },
+  "homepage": "https://github.com/yourusername/mcp-get-biji-server#readme",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "axios": "^1.7.9",
+    "dotenv": "^16.4.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.1",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
