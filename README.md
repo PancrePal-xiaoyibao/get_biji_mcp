@@ -4,13 +4,16 @@
 
 ---
 
-<a name="english"></a>
+`<a name="english"></a>`
+
 ## English
 
 ### Overview
+
 A Model Context Protocol (MCP) server for integrating with Get笔记 (GetBiji) API, enabling AI-powered knowledge base search and retrieval capabilities.
 
 ### Features
+
 - ✅ MCP server framework with stdio transport
 - ✅ Get笔记 API client with Bearer token authentication
 - ✅ Rate limiting (2 QPS, 5000 requests/day)
@@ -24,16 +27,19 @@ A Model Context Protocol (MCP) server for integrating with Get笔记 (GetBiji) A
 ### Installation
 
 **Option 1: Install globally (recommended for frequent use)**
+
 ```bash
 npm install -g mcp-get-biji-server
 ```
 
 **Option 2: Use with npx (no installation required)**
+
 ```bash
 npx mcp-get-biji-server
 ```
 
 **Option 3: Install as project dependency**
+
 ```bash
 npm install mcp-get-biji-server
 ```
@@ -41,11 +47,13 @@ npm install mcp-get-biji-server
 ### Configuration
 
 1. Copy the environment template:
+
 ```bash
 cp .env.example .env
 ```
 
 2. Edit `.env` and add your API key:
+
 ```env
 GET_BIJI_API_KEY=your_api_key_here
 GET_BIJI_API_BASE_URL=https://open-api.biji.com/getnote/openapi
@@ -60,6 +68,7 @@ RATE_LIMIT_DAILY=5000
 Edit your Claude Desktop config file (`~/Library/Application Support/Claude/claude_desktop_config.json`):
 
 **Using global installation:**
+
 ```json
 {
   "mcpServers": {
@@ -75,6 +84,7 @@ Edit your Claude Desktop config file (`~/Library/Application Support/Claude/clau
 ```
 
 **Using npx:**
+
 ```json
 {
   "mcpServers": {
@@ -91,6 +101,7 @@ Edit your Claude Desktop config file (`~/Library/Application Support/Claude/clau
 ```
 
 **Using local installation:**
+
 ```json
 {
   "mcpServers": {
@@ -111,19 +122,23 @@ Restart Claude Desktop to activate the server.
 ### MCP Tools
 
 #### 1. knowledge_search
-AI-enhanced search with deep processing.
+
+AI-enhanced search with deep processing, providing comprehensive answers based on your knowledge base.
 
 **Parameters:**
+
 - `question` (required): Search query
-- `topic_ids` (required): Knowledge base ID list (currently supports 1)
+- `topic_ids` (optional): Knowledge base ID list (currently supports 1) - can be omitted if configured via GET_BIJI_DEFAULT_TOPIC_ID
 - `deep_seek` (required): Enable deep thinking
 - `refs` (optional): Include references
 - `history` (optional): Conversation history for follow-up
 
 #### 2. knowledge_recall
-Fast retrieval of raw content without AI processing.
+
+Fast retrieval of raw content without AI processing, useful for quick previews and raw data access.
 
 **Parameters:**
+
 - `question` (required): Search query
 - `topic_id` (optional): Single knowledge base ID (preferred)
 - `topic_ids` (optional): Knowledge base ID list
@@ -132,9 +147,10 @@ Fast retrieval of raw content without AI processing.
 - `select_matrix` (optional): Enable result re-selection
 - `history` (optional): Conversation history
 
-**Note:** Either `topic_id` or `topic_ids` must be provided. `topic_id` takes priority.
+**Note:** Either `topic_id` or `topic_ids` can be omitted if configured via GET_BIJI_DEFAULT_TOPIC_ID. `topic_id` takes priority if both are provided.
 
 #### 3. get_rate_limit_stats
+
 Get current API rate limit usage statistics.
 
 ### Development
@@ -148,12 +164,14 @@ npm start            # Run (must build first)
 ```
 
 ### API Rate Limits
+
 - QPS: 2 requests/second
 - Daily: 5000 requests/day
 
 The server automatically handles rate limiting with intelligent queuing.
 
 ### Project Structure
+
 ```
 .
 ├── src/                  # Source code
@@ -170,6 +188,7 @@ The server automatically handles rate limiting with intelligent queuing.
 ```
 
 ### Tech Stack
+
 - Node.js (ES Modules)
 - TypeScript
 - @modelcontextprotocol/sdk
@@ -177,23 +196,29 @@ The server automatically handles rate limiting with intelligent queuing.
 - dotenv
 
 ### License
+
 MIT
 
 ## Contributing
 
 Contributions welcome! Please open an issue or submit a pull request.
 
-Speical thanks to the contribution & development of [Xiaoyibao-Pancrepal](www.xiaoyibao.com.cn) & [xiao-x-bao community](https://info.xiao-x-bao.com.cn) to support cancer/rare disease patients and their families with ❤️ & AI！
+Special thanks to the contribution & development of [Xiaoyibao-Pancrepal](https://www.xiaoyibao.com.cn) & [xiao-x-bao community](https://info.xiao-x-bao.com.cn) to support cancer/rare disease patients and their families with ❤️ & AI！
+
+This project is proudly supported by the xiao-x-bao community, dedicated to helping cancer and rare disease patients and their families through AI technology and community support.
 
 ---
 
-<a name="chinese"></a>
+`<a name="chinese"></a>`
+
 ## 中文
 
 ### 项目概述
+
 一个用于集成Get笔记API的Model Context Protocol (MCP)服务器,实现AI增强的知识库搜索和召回功能。
 
 ### 功能特性
+
 - ✅ 基于stdio传输的MCP服务器框架
 - ✅ 支持Bearer Token认证的Get笔记API客户端
 - ✅ 速率限制 (2 QPS, 5000次/天)
@@ -207,16 +232,19 @@ Speical thanks to the contribution & development of [Xiaoyibao-Pancrepal](www.xi
 ### 安装
 
 **方式1: 全局安装 (推荐常用场景)**
+
 ```bash
 npm install -g mcp-get-biji-server
 ```
 
 **方式2: 使用 npx (无需安装)**
+
 ```bash
 npx mcp-get-biji-server
 ```
 
 **方式3: 作为项目依赖安装**
+
 ```bash
 npm install mcp-get-biji-server
 ```
@@ -224,11 +252,13 @@ npm install mcp-get-biji-server
 ### 配置
 
 1. 复制环境变量模板:
+
 ```bash
 cp .env.example .env
 ```
 
 2. 编辑 `.env` 文件,添加您的API密钥:
+
 ```env
 GET_BIJI_API_KEY=your_api_key_here
 GET_BIJI_API_BASE_URL=https://open-api.biji.com/getnote/openapi
@@ -243,6 +273,7 @@ RATE_LIMIT_DAILY=5000
 编辑Claude Desktop配置文件 (`~/Library/Application Support/Claude/claude_desktop_config.json`):
 
 **使用全局安装:**
+
 ```json
 {
   "mcpServers": {
@@ -258,6 +289,7 @@ RATE_LIMIT_DAILY=5000
 ```
 
 **使用 npx:**
+
 ```json
 {
   "mcpServers": {
@@ -274,6 +306,7 @@ RATE_LIMIT_DAILY=5000
 ```
 
 **使用本地安装:**
+
 ```json
 {
   "mcpServers": {
@@ -294,9 +327,11 @@ RATE_LIMIT_DAILY=5000
 ### MCP工具说明
 
 #### 1. knowledge_search
+
 AI增强搜索,返回经过深度处理的答案。
 
 **参数:**
+
 - `question` (必填): 搜索问题
 - `topic_ids` (必填): 知识库ID列表(当前只支持1个)
 - `deep_seek` (必填): 启用深度思考
@@ -304,9 +339,11 @@ AI增强搜索,返回经过深度处理的答案。
 - `history` (可选): 对话历史,用于追问
 
 #### 2. knowledge_recall
+
 快速召回原始内容,不经过AI处理。
 
 **参数:**
+
 - `question` (必填): 搜索问题
 - `topic_id` (可选): 单个知识库ID(优先使用)
 - `topic_ids` (可选): 知识库ID列表
@@ -318,6 +355,7 @@ AI增强搜索,返回经过深度处理的答案。
 **注意:** `topic_id` 和 `topic_ids` 必须提供一个,优先使用 `topic_id`。
 
 #### 3. get_rate_limit_stats
+
 获取当前API速率限制使用统计。
 
 ### 开发命令
@@ -331,12 +369,14 @@ npm start            # 直接运行(需先编译)
 ```
 
 ### API限制
+
 - QPS限制: 2次/秒
 - 日限制: 5000次/天
 
 服务器内置智能排队的速率限制器,自动处理这些限制。
 
 ### 项目结构
+
 ```
 .
 ├── src/                  # 源代码目录
@@ -353,6 +393,7 @@ npm start            # 直接运行(需先编译)
 ```
 
 ### 技术栈
+
 - Node.js (ES模块)
 - TypeScript
 - @modelcontextprotocol/sdk
@@ -360,6 +401,7 @@ npm start            # 直接运行(需先编译)
 - dotenv
 
 ### 许可证
+
 MIT
 
 ## 贡献
@@ -367,3 +409,13 @@ MIT
 欢迎贡献！请提交 issue 或 pull request。
 
 特别感谢[小胰宝](www.xiaoyibao.com.cn)和 [小x宝社区](https://info.xiao-x-bao.com.cn)的贡献与付出，用爱心与人工智能为癌症/罕见病患者及其家庭提供支持！
+
+
+### 🌟 **小X宝公益社区** 
+
+国内首个面向肿瘤/罕见病/慢性病的AI开源公益社区
+*AI技术赋能*
+
+- 专注AI+医疗公益应用
+- 成功运营多个肿瘤AI助手（小胰宝、小肺宝等）
+- 拥有丰富的患者服务经验
